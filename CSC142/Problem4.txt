@@ -1,0 +1,12 @@
+/*
+Name:        Anthony Berrios
+Date:        9/20/18
+Title:       Problem 4
+Description: 2 errors
+*/
+
+The program runs howver it dispays the wrong student if multiple people scored a seven.
+The last person to get a seven is printed out instead of the first
+putting the for loop inside of a while loop owuld solve this problem.
+The while loop would stop once it has gone through every student. it would then output who
+scored a 7 if anyone. 

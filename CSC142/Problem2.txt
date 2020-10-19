@@ -1,0 +1,14 @@
+/*
+Name:        Anthony Berrios
+Date:        9/20/18
+Title:       Problem 2
+Description: 2 errors
+*/
+
+compiler error - symbol cannot be found in line 9 because
+a scanner class does was never used (import java.util.Scanner)
+
+runtime error - array pricelist[] was never declared/initialized.
+
+
+
