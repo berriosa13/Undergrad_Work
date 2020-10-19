@@ -1,0 +1,13 @@
+x: 1, a: 3, b:4
+x: 2, a: 3, b:5
+x: 1, a: 4, b:5
+x: 3, a: 3, b:4
+x: 1, a: 5, b:3
+x: 2, a: 5, b:4
+x: 1, a: 3, b:4
+
+*To get this output we must figure out what the values
+ are for f(M,N,O,P) for "x" we can assume x = 3
+ as the first column of output has not changed. for "a" the value
+ must be 3 as well because the values of the first two is 3. b is equal to 4
+ and c is equal to 5. Therefore f(M,N,O,P) = f(3,3,4,5,)
