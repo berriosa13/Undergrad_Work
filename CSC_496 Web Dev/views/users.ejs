@@ -1,0 +1,30 @@
+<html>
+    <%- include('./partials/head.ejs')  %>
+    <body>
+    <%- include('./partials/nav.ejs')  %>
+
+    <div>
+        <h2>Users Table</h2>
+        <table>
+            <tr>
+                <th>Name </th>
+                <th>Gender</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <% allUsers.forEach(userList => { %>       
+            <tr>
+                <td> <a href="#" style="color: blue;"><%=userList.name %></a> </td>
+                <td> <%=userList.gender %> </td>
+                <td> <a href="#" style="color: blue;">Edit</a> </td> 
+                <td> <a href="#" style="color: blue;">Delete</a> </td> 
+            </tr>
+                <% }); %>
+        </table>
+
+    </div>
+
+    <%- include('./partials/footer.ejs')  %>
+  
+    </body>
+</html>
