@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import FilterableProductTable from './components/FilterableProductTable'
+import {PRODUCTS} from './components/FilterableProductTable'
 
 ReactDOM.render(
   <FilterableProductTable products={PRODUCTS} />,
