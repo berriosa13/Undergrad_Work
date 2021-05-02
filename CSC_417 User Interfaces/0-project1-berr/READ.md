@@ -1,1 +1,0 @@
-run the command npm start to launch react application
