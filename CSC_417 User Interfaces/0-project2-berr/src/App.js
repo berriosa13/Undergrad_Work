@@ -17,7 +17,7 @@ export default class App extends React.Component {
       }
       this.idCounter = 100;
     }
-
+    
     saveData = (collection, item) => {
       if (item.id === "") {
           item.id = this.idCounter++;
