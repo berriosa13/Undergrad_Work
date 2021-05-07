@@ -11,7 +11,7 @@ export class AdditionalEditor extends Component {
                 semester: props.additionals.semester || "", 
                 prefix: props.additionals.prefix || "",
                 number: props.additionals.number || "",
-                grade: props.additionals.grade || ""
+                grade: props.additionals.grade || "",
             }
         }
     }
@@ -20,16 +20,12 @@ export class AdditionalEditor extends Component {
         ev.persist();
         this.setState(state => 
             state.formData[ev.target.name] =  
-                ev.target.name === "courses" 
+                ev.target.name === "additionals" 
                     ? ev.target.value.split(",") : ev.target.value);
     }
 
     handleClick = () => {
-        this.props.saveCallback(
-            { 
-                ...this.state.formData, 
-                courses: this.state.formData.courses.map(val => Number(val))
-            });
+            this.props.saveCallback(this.state.formData);       
     }
 
     render() {

@@ -25,11 +25,7 @@ export class DistributiveEditor extends Component {
     }
 
     handleClick = () => {
-        this.props.saveCallback(
-            { 
-                ...this.state.formData, 
-                courses: this.state.formData.courses.map(val => Number(val))
-            });
+        this.props.saveCallback(this.state.formData);        
     }
 
     render() {

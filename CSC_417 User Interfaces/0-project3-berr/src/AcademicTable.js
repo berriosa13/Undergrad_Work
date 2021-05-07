@@ -18,9 +18,9 @@ export class AcademicTable extends Component {
                 </thead>
                 <tbody>
                     {
-                        this.props.courses.map(p => 
-                            <AcademicTableRow product={ p } 
-                                key={ p.id }
+                        this.props.courses.map(c => 
+                            <AcademicTableRow product={ c } 
+                                key={ c.id }
                                 editCallback={ this.props.editCallback }
                                 deleteCallback={ this.props.deleteCallback } />)
                     }

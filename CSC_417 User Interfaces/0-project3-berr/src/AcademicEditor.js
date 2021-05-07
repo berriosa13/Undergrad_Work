@@ -6,12 +6,12 @@ export class AcademicEditor extends Component {
         super(props);
         this.state = {
             formData: {
-                id: props.product.id || "",
-                description: props.product.description || "", 
-                semester: props.product.semester || "", 
-                prefix: props.product.prefix || "",
-                number: props.product.number || "",
-                grade: props.product.grade || ""
+                id: props.course.id || "",
+                description: props.course.description || "", 
+                semester: props.course.semester || "", 
+                prefix: props.course.prefix || "",
+                number: props.course.number || "",
+                grade: props.course.grade || ""
             }
         }
     }

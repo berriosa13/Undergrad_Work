@@ -12,8 +12,8 @@ export class AdditionalDisplay extends Component {
         }
     }
 
-    startEditing = (supplier) => {
-        this.setState({ displayEditor: true, selected: supplier })
+    startEditing = (additionals) => {
+        this.setState({ displayEditor: true, selected: additionals })
     }
 
     createSupplier = () => {
@@ -24,8 +24,8 @@ export class AdditionalDisplay extends Component {
         this.setState({ displayEditor: false, selected: null })
     }
 
-    saveSupplier= (supplier) => {
-        this.props.saveCallback(supplier);
+    saveAdditionals= (additionals) => {
+        this.props.saveCallback(additionals);
         this.setState({ displayEditor: false, selected: null })        
     }
 
@@ -33,8 +33,8 @@ export class AdditionalDisplay extends Component {
         if (this.state.displayEditor) {
             return <AdditionalEditor
                 key={ this.state.selected.id || -1 }
-                supplier={ this.state.selected } 
-                saveCallback={ this.saveSupplier }
+                additionals={ this.state.selected } 
+                saveCallback={ this.saveAdditionals }
                 cancelCallback={ this.cancelEditing } />
         } else {
             return <div className="m-2">
