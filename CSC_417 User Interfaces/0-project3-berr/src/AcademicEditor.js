@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 
-export class ProductEditor extends Component {
+export class AcademicEditor extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             formData: {
                 id: props.product.id || "",
-                name: props.product.name || "", 
-                category: props.product.category || "", 
-                price: props.product.price || ""
+                description: props.product.description || "", 
+                semester: props.product.semester || "", 
+                prefix: props.product.prefix || "",
+                number: props.product.number || "",
+                grade: props.product.grade || ""
             }
         }
     }
@@ -33,23 +35,35 @@ export class ProductEditor extends Component {
                     onChange={ this.handleChange } />
             </div>
             <div className="form-group">
-                <label>Name</label>
-                <input className="form-control" name="name"
-                    value={ this.state.formData.name }
+                <label>Description</label>
+                <input className="form-control" name="description"
+                    value={ this.state.formData.description }
                     onChange={ this.handleChange } />
             </div>            
             <div className="form-group">
-                <label>Category</label>
-                <input className="form-control" name="category"
-                    value={ this.state.formData.category }
+                <label>Semester</label>
+                <input className="form-control" name="semester"
+                    value={ this.state.formData.semester }
                     onChange={ this.handleChange } />
-            </div>              
+            </div>   
             <div className="form-group">
-                <label>Price</label>
-                <input className="form-control" name="price"
-                    value={ this.state.formData.price }
+                <label>Prefix</label>
+                <input className="form-control" name="prefix"
+                    value={ this.state.formData.prefix }
                     onChange={ this.handleChange } />
-            </div>                          
+            </div>            
+            <div className="form-group">
+                <label>Number</label>
+                <input className="form-control" name="number"
+                    value={ this.state.formData.number }
+                    onChange={ this.handleChange } />
+            </div> 
+            <div className="form-group">
+                <label>Grade</label>
+                <input className="form-control" name="grade"
+                    value={ this.state.formData.grade }
+                    onChange={ this.handleChange } />
+            </div>                            
             <div className="text-center">
                 <button className="btn btn-primary m-1" onClick={ this.handleClick }>
                     Save

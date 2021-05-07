@@ -1,23 +1,25 @@
 import React, { Component } from "react";
 
-export class SupplierTableRow extends Component {
+export class DistributiveTableRow extends Component {
 
     render() {
         let s = this.props.supplier;
         return <tr>
-            <td>{ s.id }</td>
-            <td>{ s.name }</td>
-            <td>{ s.city}</td>
-            <td>{ s.products.join(", ") }</td>
+            <td>{s.id}</td>
+            <td>{s.description}</td>
+            <td>{s.semester}</td>
+            <td>{s.prefix}</td>
+            <td>{s.number}</td>
+            <td>{s.grade}</td>
             <td>
                 <button className="btn btn-sm btn-warning m-1"
                     onClick={ () => this.props.editCallback(s) }>
                         Edit
                 </button>
-                <button className="btn btn-sm btn-danger m-1"
+                {/* <button className="btn btn-sm btn-danger m-1"
                     onClick={ () => this.props.deleteCallback(s) }>
                         Delete
-                    </button>                    
+                    </button>                     */}
             </td>
         </tr>
     }

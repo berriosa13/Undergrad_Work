@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ProductsAndSuppliers from "./ProductsAndSuppliers";
+import Requirements from "./Requirements";
 
 export default class App extends Component {
 
     render() {
-        return <ProductsAndSuppliers/>
+        return <Requirements/>
     }
 }

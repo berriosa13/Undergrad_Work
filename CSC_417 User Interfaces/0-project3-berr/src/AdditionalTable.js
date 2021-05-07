@@ -1,28 +1,24 @@
 import React, { Component } from "react";
-import { ProductTableRow } from "./ProductTableRow";
+import { AdditionalTableRow } from "./AdditionalTableRow";
 
-export class ProductTable extends Component {
+export class AdditionalTable extends Component {
 
     render() {
         return <table className="table table-sm table-striped table-bordered">
                 <thead>
-                    <tr>
-                        <th colSpan="5" 
+                <th colSpan="7" 
                                 className="bg-primary text-white text-center h4 p-2">
-                            Products
+                            Additional Requirement
                         </th>
-                    </tr>
                     <tr>
-                        <th>ID</th><th>Name</th><th>Category</th>
-                        <th className="text-right">Price</th>
-                        <th></th>
+                    <th>ID</th><th>Description</th><th>Semester</th><th>Prefix</th><th>Number</th><th>Grade</th><th>Editor</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        this.props.products.map(p => 
-                            <ProductTableRow product={ p } 
-                                key={ p.id }
+                        this.props.additionals.map(a => 
+                            <AdditionalTableRow additionals={ a } 
+                                key={ a.id }
                                 editCallback={ this.props.editCallback }
                                 deleteCallback={ this.props.deleteCallback } />)
                     }
