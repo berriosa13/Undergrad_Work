@@ -16,7 +16,11 @@ export class AcademicTableRow extends Component {
                 <button className="btn btn-sm btn-warning m-1"
                     onClick={ () => this.props.editCallback(p) }>
                         Edit
-                </button>                  
+                </button> 
+                <button className="btn btn-sm btn-danger m-1"
+                    onClick={ () => this.props.deleteCallback(p) }>
+                        Delete
+                    </button>                  
             </td>
         </tr>
     }

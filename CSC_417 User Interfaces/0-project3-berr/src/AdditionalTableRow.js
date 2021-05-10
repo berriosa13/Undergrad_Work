@@ -16,10 +16,10 @@ export class AdditionalTableRow extends Component {
                     onClick={ () => this.props.editCallback(a) }>
                         Edit
                 </button>
-                {/* <button className="btn btn-sm btn-danger m-1"
+                <button className="btn btn-sm btn-danger m-1"
                     onClick={ () => this.props.deleteCallback(a) }>
                         Delete
-                    </button>                     */}
+                    </button>                    
             </td>
         </tr>
     }

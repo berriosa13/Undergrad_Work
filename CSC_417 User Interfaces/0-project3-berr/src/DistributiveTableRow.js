@@ -16,10 +16,10 @@ export class DistributiveTableRow extends Component {
                     onClick={ () => this.props.editCallback(s) }>
                         Edit
                 </button>
-                {/* <button className="btn btn-sm btn-danger m-1"
+                <button className="btn btn-sm btn-danger m-1"
                     onClick={ () => this.props.deleteCallback(s) }>
                         Delete
-                    </button>                     */}
+                    </button>                    
             </td>
         </tr>
     }
