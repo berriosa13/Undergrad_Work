@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="CSC_240 Java 3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/InheritanceExample.zip!/" />
+      <root url="jar://$PROJECT_DIR$/CSC240Week1MessageMapping.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

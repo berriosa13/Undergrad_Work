@@ -77,32 +77,6 @@ public class CreateTwoGUI_Apps {
             }
         });
 
-        calculateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                // AGI calculation
-                AGI = grossIncome - (dependants * 4000) - deductions - charitableContributions;
-                // Sets AGI to 0 if AGI calculation is less than 0
-                if (AGI < 0)
-                    AGI = 0;
-                // Calculates taxCalculated by multiplying the AGI by the taxRate
-                taxCalculated = (int) (AGI * taxRate);
-                // Sets two variables to display the amounts of money to be refunded or owed
-                totalRefund = taxPaid - taxCalculated;
-                totalOwe = taxCalculated - taxPaid;
-                // Conditional statements to determine whether user owes taxes or should be refunded
-                if(taxPaid > taxCalculated) {
-                    refundRadioButton.setSelected(true);
-                    taxAmountOwedTextField.setText("Total tax refund is $" + totalRefund);
-                    taxAmountOwedTextField.setForeground(Color.GREEN);
-                }
-                if (taxPaid < taxCalculated) {
-                    oweRadioButton.setSelected(true);
-                    taxAmountOwedTextField.setText("Total tax owed is $"+ totalOwe);
-                    taxAmountOwedTextField.setForeground(Color.RED);
-                }
-            }
-        });
         firstNameTextField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -270,24 +244,45 @@ public class CreateTwoGUI_Apps {
         });
         tbGrossIncome.addKeyListener(new KeyAdapter() {
         });
-    /*
-        if (!firstNameTextField.getText().equals("") && !lastNameTextField.getText().equals("")
-                && !tbGrossIncome.getText().equals("") && !totalAmountOfDeductionsTextField.getText().equals("")
-                && !ftfCharity.getText().equals("") && !ftfTaxesPaid.getText().equals("")
-        )
-            calculateButton.setEnabled(true);
-        else
-            calculateButton.setEnabled(false);
-        */
+
+        calculateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                // AGI calculation
+                AGI = grossIncome - (dependants * 4000) - deductions - charitableContributions;
+                // Sets AGI to 0 if AGI calculation is less than 0
+                if (AGI < 0)
+                    AGI = 0;
+                // Calculates taxCalculated by multiplying the AGI by the taxRate
+                taxCalculated = (int) (AGI * taxRate);
+                // Sets two variables to display the amounts of money to be refunded or owed
+                totalRefund = taxPaid - taxCalculated;
+                totalOwe = taxCalculated - taxPaid;
+                // Conditional statements to determine whether user owes taxes or should be refunded
+                if(taxPaid > taxCalculated) {
+                    refundRadioButton.setSelected(true);
+                    taxAmountOwedTextField.setText("Total tax refund is $" + totalRefund);
+                    taxAmountOwedTextField.setForeground(Color.GREEN);
+                }
+                if (taxPaid < taxCalculated) {
+                    oweRadioButton.setSelected(true);
+                    taxAmountOwedTextField.setText("Total tax owed is $"+ totalOwe);
+                    taxAmountOwedTextField.setForeground(Color.RED);
+                }
+            }
+        });
+
+
     }
     // main
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Anthony's Window");
+        JFrame frame = new JFrame("Anthony's Tax Calculator");
         frame.setContentPane(new CreateTwoGUI_Apps().mainPanel);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(new Dimension(700,500));
         frame.setVisible(true);
+
 
     }
 }

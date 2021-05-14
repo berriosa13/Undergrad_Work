@@ -123,8 +123,8 @@ public class CarApp {
             }
             }
         });
-        gearShiftCombo.addActionListener(new ActionListener() {
-        });
+//        gearShiftCombo.addActionListener(new ActionListener() {
+//        });
     }
     public static void main(String[] args) {
         JFrame frame = new JFrame("Anthony's Car Simulator");
