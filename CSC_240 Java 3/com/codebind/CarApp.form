@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.codebind.CarApp">
-  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="12" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="7" y="20" width="567" height="551"/>
+      <xy x="7" y="20" width="567" height="452"/>
     </constraints>
     <properties>
       <font name="Arial Rounded MT Bold"/>
@@ -12,34 +12,32 @@
     <children>
       <component id="97d35" class="javax.swing.JComboBox" binding="domeLightSelections">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
             <item value="Dome Light Switch"/>
             <item value="Dome Light: ON"/>
             <item value="DomeLight: OFF"/>
-            <item value="DomeLight: AUTO"/>
           </model>
         </properties>
       </component>
       <component id="7751f" class="javax.swing.JComboBox" binding="comboIgnitionKey">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
-            <item value="Ignition Key"/>
-            <item value="NO KEY"/>
-            <item value="Ignition: OFF"/>
-            <item value="Ignition: Acessory"/>
-            <item value="Ignition: ON"/>
+            <item value="Ignition"/>
+            <item value="Off"/>
+            <item value="Acessory"/>
+            <item value="On"/>
           </model>
         </properties>
       </component>
       <component id="4e0b5" class="javax.swing.JComboBox" binding="gearShiftCombo">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
@@ -53,7 +51,7 @@
       </component>
       <component id="be6ae" class="javax.swing.JComboBox" binding="comboDoor">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
@@ -65,7 +63,7 @@
       </component>
       <component id="b1e2a" class="javax.swing.JLabel" binding="domeLight">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <labelFor value="97d35"/>
@@ -74,7 +72,7 @@
       </component>
       <component id="a616f" class="javax.swing.JLabel" binding="doorKeyChime">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Door/Key Chime"/>
@@ -82,7 +80,7 @@
       </component>
       <component id="cd749" class="javax.swing.JLabel" binding="wiperLabel">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Wipers"/>
@@ -90,7 +88,7 @@
       </component>
       <component id="afd71" class="javax.swing.JLabel" binding="headlightsLabel">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Head Lights"/>
@@ -98,7 +96,7 @@
       </component>
       <component id="7c3e2" class="javax.swing.JLabel" binding="brakeLightsLabel">
         <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Brake Lights"/>
@@ -106,7 +104,7 @@
       </component>
       <component id="9eb3b" class="javax.swing.JLabel" binding="driverWindowLabel">
         <constraints>
-          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Driver Window"/>
@@ -114,7 +112,7 @@
       </component>
       <component id="f6051" class="javax.swing.JLabel" binding="otherWindowsLabel">
         <constraints>
-          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Other Windows"/>
@@ -122,7 +120,7 @@
       </component>
       <component id="4d5f5" class="javax.swing.JLabel" binding="dashSeatbeltLabel">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Dashboard Seatbelt Light"/>
@@ -130,7 +128,7 @@
       </component>
       <component id="6da58" class="javax.swing.JLabel" binding="dashDoorOpenLabel">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-8355712"/>
@@ -139,7 +137,7 @@
       </component>
       <component id="6b2e5" class="javax.swing.JLabel" binding="reverseLightLabel">
         <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Reverse Lights"/>
@@ -147,7 +145,7 @@
       </component>
       <component id="3a0e9" class="javax.swing.JComboBox" binding="comboWindowChildLock">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
@@ -159,7 +157,7 @@
       </component>
       <component id="18" class="javax.swing.JComboBox" binding="comboDriverSeat">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
@@ -169,14 +167,48 @@
           </model>
         </properties>
       </component>
-      <component id="3ec7" class="javax.swing.JComboBox" binding="doorlight">
+      <component id="3ec7" class="javax.swing.JComboBox" binding="headlightSwitch">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <model/>
+          <model>
+            <item value="Headlight Switch"/>
+            <item value="ON"/>
+            <item value="OFF"/>
+            <item value="High Beams"/>
+          </model>
         </properties>
       </component>
+      <component id="a78ca" class="javax.swing.JCheckBox" binding="leftBlinker">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Left Blinker"/>
+        </properties>
+      </component>
+      <component id="25be6" class="javax.swing.JCheckBox" binding="rightBlinker">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Right Blinker"/>
+        </properties>
+      </component>
+      <component id="8a723" class="javax.swing.JLabel" binding="turnSignal">
+        <constraints>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Turn Signal"/>
+        </properties>
+      </component>
+      <vspacer id="72f7">
+        <constraints>
+          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
 </form>

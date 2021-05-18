@@ -23,7 +23,10 @@ public class CarApp {
     private JLabel reverseLightLabel;
     private JComboBox comboDoor;
     private JComboBox domeLightSelections;
-    private JComboBox doorlight;
+    private JComboBox headlightSwitch;
+    private JCheckBox leftBlinker;
+    private JCheckBox rightBlinker;
+    private JLabel turnSignal;
     private JFrame frame;
 
     public CarApp() {
@@ -31,8 +34,14 @@ public class CarApp {
         domeLightSelections.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                domeLight.setText(domeLightSelections.getSelectedItem().toString());
-                domeLight.setForeground(Color.RED);
+                if(domeLightSelections.getSelectedItem() == domeLightSelections.getItemAt(1)) {
+//                    domeLight.setText(domeLightSelections.getSelectedItem().toString());
+                    domeLight.setForeground(Color.RED);
+                }
+                else {
+                    domeLight.setForeground(Color.BLACK);
+                }
+
             }
         });
         comboDoor.addActionListener(new ActionListener() {
@@ -61,6 +70,13 @@ public class CarApp {
                     }
             else if(gearShiftCombo.getSelectedItem() != gearShiftCombo.getItemAt(2)) {
                 reverseLightLabel.setForeground(Color.BLACK);
+            }
+            if(gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(4) && comboDriverSeat.getSelectedItem() == comboDriverSeat.getItemAt(0) || comboDriverSeat.getSelectedItem() == comboDriverSeat.getItemAt(3) ) {
+                JOptionPane.showMessageDialog(null, "Driver seat must be occupied to shift car into drive!");
+                gearShiftCombo.setSelectedItem(0);
+            }
+            if (comboDoor.getSelectedItem() == comboDoor.getItemAt(1)) {
+                JOptionPane.showMessageDialog(null, "Driver door must be closed before putting car into drive!");
             }
             }
         });
@@ -123,8 +139,50 @@ public class CarApp {
             }
             }
         });
-//        gearShiftCombo.addActionListener(new ActionListener() {
-//        });
+
+        headlightSwitch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (headlightSwitch.getSelectedItem() == headlightSwitch.getItemAt(1)) {
+                    headlightsLabel.setForeground(Color.RED);
+                }
+                else if(headlightSwitch.getSelectedItem() == headlightSwitch.getItemAt(3)) {
+                    headlightsLabel.setText("High Beams");
+                    headlightsLabel.setForeground(Color.BLUE);
+                }
+                else {
+                    headlightsLabel.setText("Head Lights");
+                    headlightsLabel.setForeground(Color.BLACK);
+                }
+
+            }
+        });
+        leftBlinker.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    turnSignal.setText("Turning Left");
+                    turnSignal.setForeground(Color.GREEN);
+                }
+                else {
+                    turnSignal.setText("Turn Signal");
+                    turnSignal.setForeground(Color.BLACK);
+                }
+            }
+        });
+        rightBlinker.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    turnSignal.setText("Turning Right");
+                    turnSignal.setForeground(Color.GREEN);
+                }
+                else {
+                    turnSignal.setText("Turn Signal");
+                    turnSignal.setForeground(Color.BLACK);
+                }
+            }
+        });
     }
     public static void main(String[] args) {
         JFrame frame = new JFrame("Anthony's Car Simulator");
@@ -138,6 +196,9 @@ public class CarApp {
 
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
 
 

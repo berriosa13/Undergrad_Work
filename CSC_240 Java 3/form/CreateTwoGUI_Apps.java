@@ -17,7 +17,6 @@ public class CreateTwoGUI_Apps {
     private JRadioButton marriedFilingSeparatelyRadioButton;
     private JRadioButton singleRadioButton;
     private JRadioButton headOfHouseholdRadioButton;
-    private JTextField taxAmountOwedTextField;
     private JRadioButton refundRadioButton;
     private JRadioButton oweRadioButton;
     private JButton clearFieldsButton;
@@ -27,6 +26,7 @@ public class CreateTwoGUI_Apps {
     private JFormattedTextField ftfTaxesPaid;
     private JPasswordField pfSSN;
     private JTextField tbGrossIncome;
+    private JLabel taxesOwed;
     private int grossIncome;
     private int dependants;
     private int AGI;
@@ -65,7 +65,7 @@ public class CreateTwoGUI_Apps {
                 numDependants.setSelectedItem(null);
                 ftfCharity.setText("");
                 ftfTaxesPaid.setText("");
-                taxAmountOwedTextField.setText("");
+                taxesOwed.setText("");
                 refundRadioButton.setSelected(false);
                 oweRadioButton.setSelected(false);
                 oweRadioButton.setText("Owe");
@@ -249,7 +249,7 @@ public class CreateTwoGUI_Apps {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 // AGI calculation
-                AGI = grossIncome - (dependants * 4000) - deductions - charitableContributions;
+                AGI = grossIncome - (dependants * 4000) - (deductions - charitableContributions);
                 // Sets AGI to 0 if AGI calculation is less than 0
                 if (AGI < 0)
                     AGI = 0;
@@ -261,13 +261,13 @@ public class CreateTwoGUI_Apps {
                 // Conditional statements to determine whether user owes taxes or should be refunded
                 if(taxPaid > taxCalculated) {
                     refundRadioButton.setSelected(true);
-                    taxAmountOwedTextField.setText("Total tax refund is $" + totalRefund);
-                    taxAmountOwedTextField.setForeground(Color.GREEN);
-                }
-                if (taxPaid < taxCalculated) {
+                    taxesOwed.setText("Total tax refund is $" + totalRefund);
+                    taxesOwed.setForeground(Color.GREEN);
+
+                } else {
                     oweRadioButton.setSelected(true);
-                    taxAmountOwedTextField.setText("Total tax owed is $"+ totalOwe);
-                    taxAmountOwedTextField.setForeground(Color.RED);
+                    taxesOwed.setText("Total tax owed is $"+ totalOwe);
+                    taxesOwed.setForeground(Color.RED);
                 }
             }
         });
