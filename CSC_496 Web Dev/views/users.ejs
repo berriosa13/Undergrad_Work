@@ -2,16 +2,21 @@
     <%- include('./partials/head.ejs')  %>
     <body>
     <%- include('./partials/nav.ejs')  %>
-
-    <div class="grid">
-        <h2>Users Table</h2> 
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
+    
+    <div class="userHeader">
+        <h3>User Table</h3>   
+        <p>Add, edit, and delete users at will!</p> 
+    </div>
+    <div class="userContainer">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
             <% allUsers.forEach(userList => { %>       
             <tr>
                 <td> <a href="#"><%=userList.name %></a> </td>

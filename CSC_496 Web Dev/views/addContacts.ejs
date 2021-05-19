@@ -3,13 +3,12 @@
 <body>
     <%- include('./partials/nav.ejs')  %>
 
-    <div class="create-user content grid">
-        <p> Please fill in the form and hit the "submit" button </p>
-        <p> We will get back to you soon, thanks!</p>
-        <form class="userinfo" method="POST" action="/users">
+    <div class="create-user content">
+        <p class="contactContainer"> Please fill out the form below and click "submit"</p>
+        <form class="userinfo contactContainer" method="POST" action="/users">
             <input type="text" name="name" required placeholder="Enter user's name"><br/> 
             <input type="text" name="gender" required placeholder="Enter user's gender"><br/>
-            <button class="btn btn-primary">Submit</button>
+            <br/><button class="btn btn-primary">Submit</button>
         </form>
     </div>
     
