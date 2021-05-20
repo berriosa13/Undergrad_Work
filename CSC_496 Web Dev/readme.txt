@@ -4,10 +4,5 @@
 4. If using nodemon, terminal will show the updated user list as they are added. 
 5. In another terminal enter command "mongod" to run database. 
 6. Finally in root directory (same dir as app.js) enter command node consume_api.
-7. The node consume_api command is giving the following syntax error for me so expect to see that on your local machine as well.
 
-	<html>     
-^
-
-SyntaxError: Unexpected token < in JSON at position 0
 
