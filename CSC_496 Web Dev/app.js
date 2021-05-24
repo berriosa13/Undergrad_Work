@@ -11,9 +11,18 @@ const apiRoutes = require('./routes/apiRoutes');
 */
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/project_1', {
-    useNewUrlParser: true, useUnifiedTopology: true}
-);
+const url = 'mongodb://localhost/project_1';
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
+
+// Testing connection
+const db = mongoose.connection
+db.once('open', _ => {
+    console.log('Database connected:', url)
+})
+
+db.once('error', _ => {
+    console.error('connection error:', url)
+})
 
 app.set('view engine', 'ejs');
 app.listen(port);
