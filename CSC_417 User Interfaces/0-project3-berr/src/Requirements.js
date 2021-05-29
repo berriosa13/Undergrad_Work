@@ -21,7 +21,7 @@ export default class Requirements extends Component {
         suppliers: [
             {id: "1", description: "Science I", semester: "", prefix: "", number: "", grade: ""},
             {id: "2", description: "Science II", semester: "", prefix: "", number: "", grade: ""},
-            {id: "3", description: "Behavior & Social Science I", semester: "", prefix: "T", number: "", grade: ""},
+            {id: "3", description: "Behavior & Social Science I", semester: "", prefix: "", number: "", grade: ""},
             {id: "4", description: "Behavior & Social Science II", semester: "", prefix: "", number: "", grade: ""},
             {id: "5", description: "Humanity I", semester: "", prefix: "", number: "", grade: ""},
             {id: "6", description: "Humanity II", semester: "", prefix: "", number: "", grade: ""},

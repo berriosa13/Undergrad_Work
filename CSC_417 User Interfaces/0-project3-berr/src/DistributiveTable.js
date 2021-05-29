@@ -4,7 +4,7 @@ import { DistributiveTableRow } from "./DistributiveTableRow";
 export class DistributiveTable extends Component {
 
     render() {
-        return <table className="table table-sm table-striped table-bordered">
+        return <table className="table table-sm table-bordered table-dark table-hover">
                 <thead>
                 <th colSpan="7" 
                                 className="bg-primary text-white text-center h4 p-2">

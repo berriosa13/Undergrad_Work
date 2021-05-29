@@ -4,7 +4,7 @@ import { AcademicTableRow } from "./AcademicTableRow";
 export class AcademicTable extends Component {
 
     render() {
-        return <table className="table table-sm table-striped table-bordered">
+        return <table className="table table-sm table-bordered table-dark table-hover">
                 <thead>
                     <tr>
                         <th colSpan="7" 
