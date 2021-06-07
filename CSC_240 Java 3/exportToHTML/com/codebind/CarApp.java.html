@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>CarApp.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CarApp.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.codebind</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">javax.swing.*</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.awt.*</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.awt.event.*</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">CarApp {</span>
+    <span class="s2">// class includes all needed JComboBox's JLabel's &amp; JPanel &amp; JFrame</span>
+    <span class="s0">private </span><span class="s1">JPanel panelMain</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox comboIgnitionKey</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox gearShiftCombo</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel domeLight</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox comboWindowChildLock</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox comboDriverSeat</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel doorKeyChime</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel wiperLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel headlightsLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel brakeLightsLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel driverWindowLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel otherWindowsLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel dashSeatbeltLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel dashDoorOpenLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel reverseLightLabel</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox comboDoor</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox domeLightSelections</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JComboBox headlightSwitch</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JCheckBox leftBlinker</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JCheckBox rightBlinker</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JLabel turnSignal</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">JFrame frame</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">CarApp() {</span>
+    <span class="s2">// Includes every action listener for all of the JComboBoxes</span>
+        <span class="s1">domeLightSelections.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent actionEvent) {</span>
+                <span class="s0">if</span><span class="s1">(domeLightSelections.getSelectedItem() == domeLightSelections.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+<span class="s2">//                    domeLight.setText(domeLightSelections.getSelectedItem().toString());</span>
+                    <span class="s1">domeLight.setForeground(Color.RED)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">domeLight.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">comboDoor.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent actionEvent) {</span>
+            <span class="s0">if </span><span class="s1">(comboDoor.getSelectedItem() == comboDoor.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+                <span class="s1">dashDoorOpenLabel.setForeground(Color.PINK)</span><span class="s0">;</span>
+                <span class="s1">doorKeyChime.setForeground(Color.RED)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+                <span class="s0">else if </span><span class="s1">(comboDoor.getSelectedItem() == comboDoor.getItemAt(</span><span class="s3">2</span><span class="s1">))  {</span>
+                    <span class="s1">dashDoorOpenLabel.setForeground(Color.GRAY)</span><span class="s0">;</span>
+                    <span class="s1">doorKeyChime.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">gearShiftCombo.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent actionEvent) {</span>
+            <span class="s0">if</span><span class="s1">(gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(</span><span class="s3">2</span><span class="s1">)) {</span>
+                <span class="s1">reverseLightLabel.setForeground(Color.RED)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s0">else if</span><span class="s1">(gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(</span><span class="s3">1</span><span class="s1">) ||</span>
+                    <span class="s1">gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(</span><span class="s3">3</span><span class="s1">) ||</span>
+                    <span class="s1">gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(</span><span class="s3">4</span><span class="s1">)) {</span>
+                         <span class="s1">reverseLightLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+            <span class="s0">else if</span><span class="s1">(gearShiftCombo.getSelectedItem() != gearShiftCombo.getItemAt(</span><span class="s3">2</span><span class="s1">)) {</span>
+                <span class="s1">reverseLightLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(</span><span class="s3">4</span><span class="s1">) &amp;&amp; comboDriverSeat.getSelectedItem() == comboDriverSeat.getItemAt(</span><span class="s3">0</span><span class="s1">) || comboDriverSeat.getSelectedItem() == comboDriverSeat.getItemAt(</span><span class="s3">3</span><span class="s1">) ) {</span>
+                <span class="s1">JOptionPane.showMessageDialog(</span><span class="s0">null, </span><span class="s4">&quot;Driver seat must be occupied to shift car into drive!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">gearShiftCombo.setSelectedItem(</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(comboDoor.getSelectedItem() == comboDoor.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+                <span class="s1">JOptionPane.showMessageDialog(</span><span class="s0">null, </span><span class="s4">&quot;Driver door must be closed before putting car into drive!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">comboIgnitionKey.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent actionEvent) {</span>
+                <span class="s0">if</span><span class="s1">(comboIgnitionKey.getSelectedItem() == comboIgnitionKey.getItemAt(</span><span class="s3">3</span><span class="s1">)</span>
+                        <span class="s1">||comboIgnitionKey.getSelectedItem()</span>
+                        <span class="s1">== comboIgnitionKey.getItemAt(</span><span class="s3">4</span><span class="s1">) ) {</span>
+                <span class="s1">driverWindowLabel.setForeground(Color.RED)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else if </span><span class="s1">(comboIgnitionKey.getSelectedItem() == comboIgnitionKey.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+                    <span class="s1">domeLight.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">doorKeyChime.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">reverseLightLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">dashSeatbeltLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">driverWindowLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">otherWindowsLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">dashSeatbeltLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(comboIgnitionKey.getSelectedItem() == comboIgnitionKey.getItemAt(</span><span class="s3">2</span><span class="s1">)) {</span>
+                    <span class="s1">domeLight.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">doorKeyChime.setForeground(Color.RED)</span><span class="s0">;</span>
+                    <span class="s1">reverseLightLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">dashSeatbeltLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">driverWindowLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">otherWindowsLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                    <span class="s1">dashSeatbeltLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(comboIgnitionKey.getSelectedItem() == comboIgnitionKey.getItemAt(</span><span class="s3">2</span><span class="s1">)</span>
+                        <span class="s1">|| comboIgnitionKey.getSelectedItem() == comboIgnitionKey.getItemAt(</span><span class="s3">2</span><span class="s1">)</span>
+                <span class="s1">&amp;&amp; comboDoor.getSelectedItem() == comboDoor.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+                    <span class="s1">doorKeyChime.setForeground(Color.RED)</span><span class="s0">;</span>
+                    <span class="s1">dashDoorOpenLabel.setForeground(Color.PINK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">comboWindowChildLock.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent actionEvent) {</span>
+                <span class="s0">if </span><span class="s1">(comboWindowChildLock.getSelectedItem() == comboWindowChildLock.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+                    <span class="s1">otherWindowsLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(comboWindowChildLock.getSelectedItem() == comboWindowChildLock.getItemAt(</span><span class="s3">2</span><span class="s1">)) {</span>
+                    <span class="s1">otherWindowsLabel.setForeground(Color.RED)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">comboDriverSeat.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent actionEvent) {</span>
+            <span class="s0">if</span><span class="s1">(comboDriverSeat.getSelectedItem() == comboDriverSeat.getItemAt(</span><span class="s3">1</span><span class="s1">)</span>
+                    <span class="s1">&amp;&amp; comboIgnitionKey.getSelectedItem() == comboIgnitionKey.getItemAt(</span><span class="s3">4</span><span class="s1">)</span>
+                    <span class="s1">&amp;&amp; gearShiftCombo.getSelectedItem() == gearShiftCombo.getItemAt(</span><span class="s3">4</span><span class="s1">)</span>
+                    <span class="s1">&amp;&amp; comboDoor.getSelectedItem() == comboDoor.getItemAt(</span><span class="s3">2</span><span class="s1">)) {</span>
+                <span class="s1">dashSeatbeltLabel.setForeground(Color.RED)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">else if</span><span class="s1">(comboDriverSeat.getSelectedItem() == comboDriverSeat.getItemAt(</span><span class="s3">2</span><span class="s1">)) {</span>
+                <span class="s1">dashSeatbeltLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">headlightSwitch.addActionListener(</span><span class="s0">new </span><span class="s1">ActionListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent e) {</span>
+                <span class="s0">if </span><span class="s1">(headlightSwitch.getSelectedItem() == headlightSwitch.getItemAt(</span><span class="s3">1</span><span class="s1">)) {</span>
+                    <span class="s1">headlightsLabel.setForeground(Color.RED)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(headlightSwitch.getSelectedItem() == headlightSwitch.getItemAt(</span><span class="s3">3</span><span class="s1">)) {</span>
+                    <span class="s1">headlightsLabel.setText(</span><span class="s4">&quot;High Beams&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">headlightsLabel.setForeground(Color.BLUE)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">headlightsLabel.setText(</span><span class="s4">&quot;Head Lights&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">headlightsLabel.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">leftBlinker.addItemListener(</span><span class="s0">new </span><span class="s1">ItemListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">itemStateChanged(ItemEvent e) {</span>
+                <span class="s0">if </span><span class="s1">(e.getStateChange() == ItemEvent.SELECTED) {</span>
+                    <span class="s1">turnSignal.setText(</span><span class="s4">&quot;Turning Left&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">turnSignal.setForeground(Color.GREEN)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">turnSignal.setText(</span><span class="s4">&quot;Turn Signal&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">turnSignal.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s1">rightBlinker.addItemListener(</span><span class="s0">new </span><span class="s1">ItemListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">itemStateChanged(ItemEvent e) {</span>
+                <span class="s0">if </span><span class="s1">(e.getStateChange() == ItemEvent.SELECTED) {</span>
+                    <span class="s1">turnSignal.setText(</span><span class="s4">&quot;Turning Right&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">turnSignal.setForeground(Color.GREEN)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">turnSignal.setText(</span><span class="s4">&quot;Turn Signal&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">turnSignal.setForeground(Color.BLACK)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">JFrame frame = </span><span class="s0">new </span><span class="s1">JFrame(</span><span class="s4">&quot;Anthony's Car Simulator&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">frame.setContentPane(</span><span class="s0">new </span><span class="s1">CarApp().panelMain)</span><span class="s0">;</span>
+        <span class="s1">frame.setLocationRelativeTo(</span><span class="s0">null</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)</span><span class="s0">;</span>
+        <span class="s1">frame.setSize(</span><span class="s0">new </span><span class="s1">Dimension(</span><span class="s3">700</span><span class="s0">,</span><span class="s3">500</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">frame.setVisible(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+
+
+
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">createUIComponents() {</span>
+        <span class="s2">// TODO: place custom component creation code here</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+
+
+
+
+</pre>
+</body>
+</html>

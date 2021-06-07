@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CSC_240 Java 3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CSC_240_Java_3_jar</output-path>
+    <root id="archive" name="CSC_240 Java 3.jar">
+      <element id="module-output" name="CSC_240 Java 3" />
+    </root>
+  </artifact>
+</component>
